@@ -19,7 +19,7 @@ cat <<EOF >>/etc/pacman.d/mirrorlist
 ## Russia
 #Server = http://mirror.rol.ru/archlinux/\$repo/os/\$arch
 Server = https://mirror.rol.ru/archlinux/\$repo/os/\$arch
-#Server = http://mirror.truenetwork.ru/archlinux/\$repo/os/\$arch
+#Server = http://mirror.truenetwork.ru/archlinux/\$repo/os/\$arch  
 #Server = http://mirror.yandex.ru/archlinux/\$repo/os/\$arch
 Server = https://mirror.yandex.ru/archlinux/\$repo/os/\$arch
 #Server = http://archlinux.zepto.cloud/\$repo/os/\$arch
@@ -77,6 +77,7 @@ pacman  -Sy  xfce4 xfce4-goodies
 grep -r -l '#greeter-session=example-gtk-gnome' /etc/lightdm/lightdm.conf | xargs sed -i 's/\#greeter-session\=example-gtk-gnome/greeter-session\=lightdm-deepin-greeter/g'
 #stemctl start lightdm.service
 systemctl enable lxdm.service
+systemctl enable NetworkManager.service
 sleep 1
 echo "password for root user:"
 passwd

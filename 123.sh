@@ -35,15 +35,15 @@ pacman -Sy
 #Форматируем в ext 4 наш диск
 cfdisk
 
+mkfs.btrfs /dev/sda2
+
 mkfs.ext2  /dev/sda1 -L boot
-
-mkfs.ext4 /dev/sda2
-
 
 # Монтируем диск к папке
 mount /dev/sda2 /mnt
 
 mkdir -p /mnt/boot
+
 mount /dev/sda1 /mnt/boot
 
 

@@ -37,7 +37,7 @@ cfdisk
 
 mkfs.ext2  /dev/sda1 -L boot
 
-mkfs.btrfs /dev/sda2
+mkfs.ext4 /dev/sda2
 
 
 # Монтируем диск к папке

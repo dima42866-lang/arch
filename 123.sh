@@ -77,7 +77,7 @@ grub-install /dev/sda
 grub-mkconfig -o /boot/grub/grub.cfg
 pacman-key --init
 pacman-key --populate archlinux
-pacman  -Sy xorg xorg-server   xterm lxdm networkmanager network-manager-applet chromium nano i3-gaps i3status dmenu terminator gparted
+pacman  -Sy xorg xorg-server lxdm networkmanager network-manager-applet chromium nano i3-gaps i3status dmenu terminator gparted
 pacman  -Sy xfce4 xfce4-goodies
 
 

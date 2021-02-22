@@ -93,6 +93,7 @@ passwd z
 
 usermod --append --groups wheel z
 
+umount -R /mnt
 
 exit
 

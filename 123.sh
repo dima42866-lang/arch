@@ -33,13 +33,17 @@ pacman -Sy
 
 
 #Форматируем в ext 4 наш диск
+mkfs -t ext2 -L Boot /dev/sda1
 
-mkfs.ext4 /dev/sda1
+mkfs.ext4 /dev/sda2
 
 
 # Монтируем диск к папке
-mount /dev/sda1 /mnt
+mount /dev/sda2 /mnt
 
+mkdir /mnt/{boot,home}
+
+mount /dev/sda1 /mnt/boot
 
 
 #Устанавливаем based  и linux ядро + софт который нам нужен сразу

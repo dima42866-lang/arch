@@ -69,8 +69,6 @@ echo "en_US.UTF-8 UTF-8" > /etc/locale.gen
 echo "ru_RU.UTF-8 UTF-8" >> /etc/locale.gen
 echo 'Обновим текущую локаль системы'
 locale-gen
-localectl set-locale LANG=ru_RU.UTF-8
-
 
 sleep 1
 ln -sf /usr/share/zoneinfo/Europe/Moscow /etc/localtime
@@ -79,8 +77,8 @@ grub-install /dev/sda
 grub-mkconfig -o /boot/grub/grub.cfg
 pacman-key --init
 pacman-key --populate archlinux
-pacman  -Sy   xorg-server xorg  mesa-libgl lib32-mesa-libgl xterm lxdm networkmanager network-manager-applet chromium nano i3-gaps i3status dmenu terminator gparted
-pacman  -Sy  xfce4 xfce4-goodies
+pacman  -Sy xorg xorg-server   xterm lxdm networkmanager network-manager-applet chromium nano i3-gaps i3status dmenu terminator gparted
+pacman  -Sy xfce4 xfce4-goodies
 
 
 grep -r -l '#greeter-session=example-gtk-gnome' /etc/lightdm/lightdm.conf | xargs sed -i 's/\#greeter-session\=example-gtk-gnome/greeter-session\=lightdm-deepin-greeter/g'

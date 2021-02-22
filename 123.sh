@@ -33,7 +33,7 @@ pacman -Sy
 
 
 #Форматируем в ext 4 наш диск
-mkfs -t ext2 -L Boot /dev/sda1
+mkfs.ext2  /dev/sda1 -L boot
 
 mkfs.ext4 /dev/sda2
 
@@ -41,6 +41,7 @@ mkfs.ext4 /dev/sda2
 # Монтируем диск к папке
 mount /dev/sda2 /mnt
 
+mkdir /mnt/boot
 mount /dev/sda1 /mnt/boot
 
 
@@ -59,8 +60,9 @@ cat <<EOF  >> /mnt/opt/install.sh
 #!/bin/bash
 
 
+
+echo "en_US.UTF-8 UTF-8" > /etc/locale.gen
 echo "ru_RU.UTF-8 UTF-8" >> /etc/locale.gen
-echo "en_US.UTF-8 UTF-8" > /etc/locale.gen 
 echo 'Обновим текущую локаль системы'
 locale-gen
 localectl set-locale LANG=ru_RU.UTF-8

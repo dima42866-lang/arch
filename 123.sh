@@ -33,6 +33,8 @@ pacman -Sy
 
 
 #Форматируем в ext 4 наш диск
+cfdisk
+
 mkfs.ext2  /dev/sda1 -L boot
 
 mkfs.btrfs /dev/sda2

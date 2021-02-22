@@ -41,7 +41,7 @@ mkfs.ext4 /dev/sda2
 # Монтируем диск к папке
 mount /dev/sda2 /mnt
 
-mkdir /mnt/boot
+mkdir -p /mnt/boot
 mount /dev/sda1 /mnt/boot
 
 

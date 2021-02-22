@@ -17,12 +17,12 @@ cat <<EOF >>/etc/pacman.d/mirrorlist
 ##
 
 ## Russia
-#Server = http://mirror.rol.ru/archlinux/\$repo/os/\$arch
+Server = http://mirror.rol.ru/archlinux/\$repo/os/\$arch
 Server = https://mirror.rol.ru/archlinux/\$repo/os/\$arch
-#Server = http://mirror.truenetwork.ru/archlinux/\$repo/os/\$arch  
-#Server = http://mirror.yandex.ru/archlinux/\$repo/os/\$arch
+Server = http://mirror.truenetwork.ru/archlinux/\$repo/os/\$arch  
+Server = http://mirror.yandex.ru/archlinux/\$repo/os/\$arch
 Server = https://mirror.yandex.ru/archlinux/\$repo/os/\$arch
-#Server = http://archlinux.zepto.cloud/\$repo/os/\$arch
+Server = http://archlinux.zepto.cloud/\$repo/os/\$arch
 
 EOF
 
@@ -59,9 +59,8 @@ cat <<EOF  >> /mnt/opt/install.sh
 #!/bin/bash
 
 
-
-echo "en_US.UTF-8 UTF-8" > /etc/locale.gen
-echo "ru_RU.UTF-8 UTF-8" >> /etc/locale.gen 
+echo "ru_RU.UTF-8 UTF-8" >> /etc/locale.gen
+echo "en_US.UTF-8 UTF-8" > /etc/locale.gen 
 echo 'Обновим текущую локаль системы'
 locale-gen
 
@@ -72,7 +71,7 @@ grub-install /dev/sda
 grub-mkconfig -o /boot/grub/grub.cfg
 pacman-key --init
 pacman-key --populate archlinux
-pacman  -Sy  xorg xorg-server  lxdm networkmanager network-manager-applet chromium
+pacman  -Sy  xorg xorg-server  lxdm networkmanager network-manager-applet chromium nano i3-gaps i3status dmenu terminator
 pacman  -Sy  xfce4 xfce4-goodies
 
 

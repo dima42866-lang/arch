@@ -102,6 +102,10 @@ passwd z
 
 usermod --append --groups wheel z
 
+echo 'Устанавливаем SUDO'
+echo '%wheel ALL=(ALL) ALL' >> /etc/sudoers
+
+
 umount -R /mnt
 
 exit

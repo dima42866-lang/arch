@@ -84,10 +84,10 @@ grub-install /dev/sda
 grub-mkconfig -o /boot/grub/grub.cfg
 pacman-key --init
 pacman-key --populate archlinux
-pacman  -Sy xorg xorg-server lxdm networkmanager network-manager-applet chromium nano i3-gaps i3status dmenu terminator gparted vim
+pacman  -Sy xorg xorg-server lxdm networkmanager network-manager-applet chromium nano i3-gaps i3status dmenu terminator gparted vim --noconfirm
 pacman  -Sy xfce4 xfce4-goodies
 
-sudo pacman -S git
+sudo pacman -S git glibc lib32-glibc --noconfirm
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
@@ -102,7 +102,7 @@ sudo pacman -S recoll chromium flameshot obs-studio veracrypt vlc freemind filez
 yay -Syy
 yay -S xflux sublime-text-dev hunspell-ru pamac-aur-git megasync-nopdfium trello xorg-xkill ttf-symbola ttf-clear-sans --noconfirm
 sudo pacman -S  i3-wm dmenu pcmanfm ttf-font-awesome feh gvfs udiskie xorg-xbacklight ristretto tumbler compton jq --noconfirm
-yay -S polybar ttf-weather-icons ttf-clear-sans
+yay -S polybar ttf-weather-icons ttf-clear-sans --noconfirm
 git clone https://github.com/dima42866-lang/i3wm
 sudo rm -rf ~/.config/i3/*
 sudo rm -rf ~/.config/polybar/*

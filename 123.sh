@@ -87,9 +87,6 @@ pacman-key --populate archlinux
 pacman  -Sy xorg xorg-server lxdm networkmanager network-manager-applet chromium nano i3-gaps i3status dmenu terminator gparted vim
 pacman  -Sy xfce4 xfce4-goodies
 
-mkdir ~/Downloads
-cd ~/Downloads
-
 sudo pacman -S git
 git clone https://aur.archlinux.org/yay.git
 cd yay

@@ -87,13 +87,15 @@ pacman-key --populate archlinux
 pacman  -Sy xorg xorg-server lxdm networkmanager network-manager-applet chromium nano i3-gaps i3status dmenu terminator gparted vim --noconfirm
 pacman  -Sy xfce4 xfce4-goodies
 
-pacman -S git glibc lib32-glibc --noconfirm
+pacman -S xdg-user-dirs --noconfirm
+xdg-user-dirs-update
+
+pacman Syyu
+pacman -S git glibc lib32-glibc
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
 
-pacman -S xdg-user-dirs --noconfirm
-xdg-user-dirs-update
 
 echo 'Установка базовых программ и пакетов'
 pacman -S reflector firefox firefox-i18n-ru ufw f2fs-tools dosfstools ntfs-3g alsa-lib alsa-utils file-roller p7zip unrar gvfs aspell-ru pulseaudio pavucontrol --noconfirm

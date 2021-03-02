@@ -87,26 +87,26 @@ pacman-key --populate archlinux
 pacman  -Sy xorg xorg-server lxdm networkmanager network-manager-applet chromium nano i3-gaps i3status dmenu terminator gparted vim --noconfirm
 pacman  -Sy xfce4 xfce4-goodies
 
-sudo pacman -S git glibc lib32-glibc --noconfirm
+pacman -S git glibc lib32-glibc --noconfirm
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
 
-sudo pacman -S xdg-user-dirs --noconfirm
+pacman -S xdg-user-dirs --noconfirm
 xdg-user-dirs-update
 
 echo 'Установка базовых программ и пакетов'
-sudo pacman -S reflector firefox firefox-i18n-ru ufw f2fs-tools dosfstools ntfs-3g alsa-lib alsa-utils file-roller p7zip unrar gvfs aspell-ru pulseaudio pavucontrol --noconfirm
+pacman -S reflector firefox firefox-i18n-ru ufw f2fs-tools dosfstools ntfs-3g alsa-lib alsa-utils file-roller p7zip unrar gvfs aspell-ru pulseaudio pavucontrol --noconfirm
 
-sudo pacman -S recoll chromium flameshot obs-studio veracrypt vlc freemind filezilla gimp libreoffice libreoffice-fresh-ru kdenlive neofetch qbittorrent galculator telegram-desktop viewnior --noconfirm
+pacman -S recoll chromium flameshot obs-studio veracrypt vlc freemind filezilla gimp libreoffice libreoffice-fresh-ru kdenlive neofetch qbittorrent galculator telegram-desktop viewnior --noconfirm
 yay -Syy
 yay -S xflux sublime-text-dev hunspell-ru pamac-aur-git megasync-nopdfium trello xorg-xkill ttf-symbola ttf-clear-sans --noconfirm
 sudo pacman -S  i3-wm dmenu pcmanfm ttf-font-awesome feh gvfs udiskie xorg-xbacklight ristretto tumbler compton jq --noconfirm
 yay -S polybar ttf-weather-icons ttf-clear-sans --noconfirm
 git clone https://github.com/dima42866-lang/i3wm
-sudo rm -rf ~/.config/i3/*
-sudo rm -rf ~/.config/polybar/*
-sudo tar -xzf config_i3wm.tar.gz -C ~/
+rm -rf ~/.config/i3/*
+rm -rf ~/.config/polybar/*
+tar -xzf config_i3wm.tar.gz -C ~/
 
 grep -r -l '#greeter-session=example-gtk-gnome' /etc/lightdm/lightdm.conf | xargs sed -i 's/\#greeter-session\=example-gtk-gnome/greeter-session\=lightdm-deepin-greeter/g'
 #stemctl start lightdm.service

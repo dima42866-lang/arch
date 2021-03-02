@@ -90,12 +90,11 @@ pacman  -Sy xfce4 xfce4-goodies
 mkdir ~/downloads
 cd ~/downloads
 
-echo 'Установка AUR (yay)'
-sudo pacman -Syu
-sudo pacman -S wget --noconfirm
-wget git.io/yay-install.sh && sh yay-install.sh --noconfirm
+sudo pacman -S git
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
 
-echo 'Создаем нужные директории'
 sudo pacman -S xdg-user-dirs --noconfirm
 xdg-user-dirs-update
 
@@ -105,9 +104,9 @@ sudo pacman -S reflector firefox firefox-i18n-ru ufw f2fs-tools dosfstools ntfs-
 sudo pacman -S recoll chromium flameshot obs-studio veracrypt vlc freemind filezilla gimp libreoffice libreoffice-fresh-ru kdenlive neofetch qbittorrent galculator telegram-desktop viewnior --noconfirm
 yay -Syy
 yay -S xflux sublime-text-dev hunspell-ru pamac-aur-git megasync-nopdfium trello xorg-xkill ttf-symbola ttf-clear-sans --noconfirm
-sudo pacman -S  i3-wm polybar dmenu pcmanfm ttf-font-awesome feh gvfs udiskie xorg-xbacklight ristretto tumbler compton jq --noconfirm
+sudo pacman -S  i3-wm dmenu pcmanfm ttf-font-awesome feh gvfs udiskie xorg-xbacklight ristretto tumbler compton jq --noconfirm
 yay -S polybar ttf-weather-icons ttf-clear-sans
-wget https://github.com/dima42866-lang/i3wm/raw/main/config_i3wm.tar.gz
+git clone https://github.com/dima42866-lang/i3wm
 sudo rm -rf ~/.config/i3/*
 sudo rm -rf ~/.config/polybar/*
 sudo tar -xzf config_i3wm.tar.gz -C ~/

@@ -90,11 +90,13 @@ pacman  -Sy xfce4 xfce4-goodies
 pacman -S xdg-user-dirs --noconfirm
 xdg-user-dirs-update
 
-pacman Syyu
-pacman -S git glibc lib32-glibc
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si
+pacman Syu
+mkdir ~/Downloads
+cd ~/Downloads
+
+echo 'Установка AUR (yay)'
+sudo pacman -S wget --noconfirm
+wget git.io/yay-install.sh && sh yay-install.sh --noconfirm
 
 
 echo 'Установка базовых программ и пакетов'

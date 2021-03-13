@@ -55,7 +55,6 @@ pacstrap /mnt base base-devel linux linux-headers vim bash-completion grub # par
 # прописываем fstab
 genfstab -pU /mnt >> /mnt/etc/fstab
 
-arch-chroot /mnt 
 
 #Прокидываем правильные быстрые репы внутрь
 cp /etc/pacman.d/mirrorlist /mnt/etc/pacman.d/mirrorlist
@@ -82,8 +81,6 @@ echo 'FONT=cyr-sun16' >> /etc/vconsole.conf
 sleep 1
 ln -sf /usr/share/zoneinfo/Europe/Moscow /etc/localtime
 echo "/dev/sda /    ext4 defaults 0 1" > /etc/fstab
-echo 'Создадим загрузочный RAM диск'
-mkinitcpio -p linuxgrub-install /dev/sda
 grub-mkconfig -o /boot/grub/grub.cfg
 pacman-key --init
 pacman-key --populate archlinux
@@ -99,15 +96,14 @@ echo 'Установка AUR (yay)'
 pacman -S wget
 wget git.io/yay-install.sh && sh yay-install.sh 
 
-sleep 10
+sleep 1
 echo 'Установка базовых программ и пакетов'
 pacman -S reflector firefox firefox-i18n-ru ufw f2fs-tools dosfstools ntfs-3g alsa-lib alsa-utils file-roller p7zip unrar gvfs aspell-ru pulseaudio pavucontrol --noconfirm
 
 pacman -S recoll chromium flameshot obs-studio veracrypt vlc freemind filezilla gimp libreoffice libreoffice-fresh-ru kdenlive neofetch qbittorrent galculator telegram-desktop viewnior --noconfirm
-yay -Syy
-yay -S xflux sublime-text-dev hunspell-ru pamac-aur-git megasync-nopdfium trello xorg-xkill ttf-symbola ttf-clear-sans 
-sudo pacman -S  i3-wm dmenu pcmanfm ttf-font-awesome feh gvfs udiskie xorg-xbacklight ristretto tumbler compton jq
-yay -S polybar ttf-weather-icons ttf-clear-sans --noconfirm
+
+pacman -S  i3-wm dmenu pcmanfm ttf-font-awesome feh gvfs udiskie xorg-xbacklight ristretto tumbler compton jq
+
 git clone https://github.com/dima42866-lang/i3wm
 rm -rf ~/.config/i3/*
 rm -rf ~/.config/polybar/*

@@ -84,10 +84,10 @@ grub-install /dev/sda
 grub-mkconfig -o /boot/grub/grub.cfg
 pacman-key --init
 pacman-key --populate archlinux
-pacman  -Sy xorg xorg-server lxdm networkmanager network-manager-applet chromium nano i3-gaps i3status dmenu terminator gparted vim --noconfirm
-pacman  -Sy xfce4 xfce4-goodies
+pacman  -Sy xorg xorg-server lxdm networkmanager network-manager-applet chromium nano i3-gaps i3status dmenu terminator gparted vim 
+pacman  -Sy xfce4 xfce4-goodies git glibc
 
-pacman -S xdg-user-dirs --noconfirm
+pacman -S xdg-user-dirs 
 xdg-user-dirs-update
 
 pacman Syu
@@ -96,7 +96,7 @@ cd ~/Downloads
 
 echo 'Установка AUR (yay)'
 sudo pacman -S wget --noconfirm
-wget git.io/yay-install.sh && sh yay-install.sh --noconfirm
+wget git.io/yay-install.sh && sh yay-install.sh 
 
 
 echo 'Установка базовых программ и пакетов'

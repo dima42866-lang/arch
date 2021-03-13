@@ -81,6 +81,7 @@ echo 'FONT=cyr-sun16' >> /etc/vconsole.conf
 sleep 1
 ln -sf /usr/share/zoneinfo/Europe/Moscow /etc/localtime
 echo "/dev/sda /    ext4 defaults 0 1" > /etc/fstab
+grub-install /dev/sda
 grub-mkconfig -o /boot/grub/grub.cfg
 pacman-key --init
 pacman-key --populate archlinux

@@ -85,17 +85,15 @@ grub-mkconfig -o /boot/grub/grub.cfg
 pacman-key --init
 pacman-key --populate archlinux
 pacman  -Sy xorg xorg-server lxdm networkmanager network-manager-applet chromium nano i3-gaps i3status dmenu terminator gparted vim 
-pacman  -Sy xfce4 xfce4-goodies git glibc lib32-glibc wget
+pacman  -Sy xfce4 xfce4-goodies git glibc lib32-glibc 
 
 pacman -S xdg-user-dirs 
 xdg-user-dirs-update
 
 pacman Syu
-mkdir ~/Downloads
-cd ~/Downloads
 
 echo 'Установка AUR (yay)'
-sudo pacman -S wget --noconfirm
+sudo pacman -S wget
 wget git.io/yay-install.sh && sh yay-install.sh 
 
 
@@ -104,8 +102,8 @@ pacman -S reflector firefox firefox-i18n-ru ufw f2fs-tools dosfstools ntfs-3g al
 
 pacman -S recoll chromium flameshot obs-studio veracrypt vlc freemind filezilla gimp libreoffice libreoffice-fresh-ru kdenlive neofetch qbittorrent galculator telegram-desktop viewnior --noconfirm
 yay -Syy
-yay -S xflux sublime-text-dev hunspell-ru pamac-aur-git megasync-nopdfium trello xorg-xkill ttf-symbola ttf-clear-sans --noconfirm
-sudo pacman -S  i3-wm dmenu pcmanfm ttf-font-awesome feh gvfs udiskie xorg-xbacklight ristretto tumbler compton jq --noconfirm
+yay -S xflux sublime-text-dev hunspell-ru pamac-aur-git megasync-nopdfium trello xorg-xkill ttf-symbola ttf-clear-sans 
+sudo pacman -S  i3-wm dmenu pcmanfm ttf-font-awesome feh gvfs udiskie xorg-xbacklight ristretto tumbler compton jq
 yay -S polybar ttf-weather-icons ttf-clear-sans --noconfirm
 git clone https://github.com/dima42866-lang/i3wm
 rm -rf ~/.config/i3/*

@@ -55,6 +55,8 @@ pacstrap /mnt base base-devel linux linux-headers vim bash-completion grub # par
 # прописываем fstab
 genfstab -pU /mnt >> /mnt/etc/fstab
 
+arch-chroot /mnt sh
+
 #Прокидываем правильные быстрые репы внутрь
 cp /etc/pacman.d/mirrorlist /mnt/etc/pacman.d/mirrorlist
 
@@ -94,7 +96,7 @@ xdg-user-dirs-update
 pacman Syu
 
 echo 'Установка AUR (yay)'
-sudo pacman -S wget
+pacman -S wget
 wget git.io/yay-install.sh && sh yay-install.sh 
 
 sleep 10

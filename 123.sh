@@ -37,12 +37,12 @@ cfdisk
 
 mkfs.ext2  /dev/sda1 -L boot
 
-mkfs.ext4 /dev/sda2 -L root
+mkfs.ext4 /dev/sdb4 -L root
 
 
 # Монтируем диск к папке
 
-mount /dev/sda2 /mnt
+mount /dev/sdb4 /mnt
 
 mkdir -p /mnt/boot
 

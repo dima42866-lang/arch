@@ -92,10 +92,6 @@ xdg-user-dirs-update
 
 pacman Syu
 
-echo 'Установка AUR (yay)'
-pacman -S wget
-wget git.io/yay-install.sh && sh yay-install.sh 
-
 sleep 1
 echo 'Установка базовых программ и пакетов'
 pacman -S reflector firefox firefox-i18n-ru ufw f2fs-tools dosfstools ntfs-3g alsa-lib alsa-utils file-roller p7zip unrar gvfs aspell-ru pulseaudio pavucontrol --noconfirm

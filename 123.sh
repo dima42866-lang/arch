@@ -55,7 +55,7 @@ pacstrap /mnt base base-devel linux linux-headers vim bash-completion grub # par
 # прописываем fstab
 genfstab -pU /mnt >> /mnt/etc/fstab
 
-arch-chroot /mnt sh
+arch-chroot /mnt 
 
 #Прокидываем правильные быстрые репы внутрь
 cp /etc/pacman.d/mirrorlist /mnt/etc/pacman.d/mirrorlist

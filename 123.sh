@@ -85,7 +85,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 pacman-key --init
 pacman-key --populate archlinux
 pacman  -Sy xorg xorg-server lxdm networkmanager network-manager-applet chromium nano i3-gaps i3status dmenu terminator gparted vim 
-pacman  -Sy xfce4 xfce4-goodies git glibc
+pacman  -Sy xfce4 xfce4-goodies git glibc lib32-glibc wget
 
 pacman -S xdg-user-dirs 
 xdg-user-dirs-update
